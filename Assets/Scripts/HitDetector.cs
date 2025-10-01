@@ -9,9 +9,12 @@ public class HitDetector : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-
-
+            EnemyController enemyController = other.GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                enemyController.GotHit();
+            }
         }
-    }
 
+    }
 }
